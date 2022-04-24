@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load tailwind_filters %}
+{% block title %}
+Create new category
+{% endblock title  %}
+
+{% bslock content  %}
+
+
+<div class = "py-9 max-w-lg mx-auto">
+    <div class="py-5">
+    <button><a class="hover:text-blue-500" href="{% url 'leads:category-list' %}">Go Back</a></button>
+    </div>
+    <div class="py-5 border-t bordere-gray-200">
+        <h1 class="text-4xl text-gray-800"> Create a new Category </h1>
+     </div>
+        <form class="mt-5" method = "POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="mt-2 w-full bg-yellow-500 hover:bg-yellow-600 px-3 py-2 rounded-md">Submit</button>
+        </form>
+
+</div>
+
+{% endblock content  %}
+
+
+
+
