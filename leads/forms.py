@@ -31,7 +31,12 @@ class LeadForm(forms.Form):
 class CustomerCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ("username",)
+        fields = ('username',
+                  'first_name',
+                  'last_name',
+                  'phone_number',
+                  'email',
+                  )
         fields_classes = {'username': UsernameField}
 
 class AssignAgentForm(forms.Form):
